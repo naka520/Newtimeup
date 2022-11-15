@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PomodoroTimer</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="breaktime">Breaktime</string>
+    <string name="finish">Finish</string>
+    <string name="record">Record</string>
+    <string name="zero">"00:00.0"</string>
+</resources>
