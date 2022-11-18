@@ -19,6 +19,10 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
+
+
+
+
 //import java.util.Calendar;
 //import java.util.GregorianCalendar;
 
@@ -39,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
     private int re;
     public int porocount;
 
+    private DataBase helper = null;
 
     private final SimpleDateFormat dataFormat =
             new SimpleDateFormat("mm:ss.S", Locale.US);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
@@ -78,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
         timerText = findViewById(R.id.timer);
         timerText.setText(dataFormat.format(0));
+
+        helper = new DataBase(this);
 
 
 
@@ -172,12 +180,46 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+    }
+
+//    public void onSave(View view) {
+//
+//        // 入力欄に入力されたタイトルとコンテンツを取得
+//        String title    = editTitle.getText().toString();
+//        String contents = editContents.getText().toString();
+//
+//        // 書き込みモードでデータベースをオープン
+//        try (SQLiteDatabase db = helper.getWritableDatabase()) {
+//
+//            // 入力されたタイトルとコンテンツをContentValuesに設定
+//            // ContentValuesは、項目名と値をセットで保存できるオブジェクト
+//            ContentValues cv = new ContentValues();
+//            cv.put(DBContract.DBEntry.COLUMN_NAME_TITLE, title);
+//            cv.put(DBContract.DBEntry.COLUMN_NAME_CONTENTS, contents);
+//
+//            // 現在テーブルに登録されているデータの_IDを取得
+//            Cursor cursor = db.query(DBContract.DBEntry.TABLE_NAME,  new String[] {DBContract.DBEntry._ID}, null, null,
+//                    null, null, null, null);
+//
+//            // テーブルにデータが登録されていれば更新処理
+//            if (cursor.moveToFirst()){
+//
+//                // 取得した_IDをparamsに設定
+//                String[] params = {cursor.getString(0)};
+//
+//                // _IDのデータを更新
+//                db.update(DBContract.DBEntry.TABLE_NAME, cv, DBContract.DBEntry._ID + " = ?", params);
+//
+//            } else {
+//
+//                // データがなければ新規登録
+//                ((SQLiteDatabase) db).insert(DBContract.DBEntry.TABLE_NAME, null, cv);
+//            }
+//        }
+
+
+
 
 
 
     }
-
-
-
-
-}
