@@ -29,7 +29,7 @@ import java.util.TimerTask;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity<string> extends AppCompatActivity {
 
     private SoundPool soundPool;
     private int Soundhuurin;
@@ -43,7 +43,11 @@ public class MainActivity extends AppCompatActivity {
     private int re;
     public int porocount;
 
-    private DataBase helper = null;
+    public String poro = "poromode!";
+    public String c1 = null;
+
+
+    //private DataBase helper = null;
 
     private final SimpleDateFormat dataFormat =
             new SimpleDateFormat("mm:ss.S", Locale.US);
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         timerText = findViewById(R.id.timer);
         timerText.setText(dataFormat.format(0));
 
-        helper = new DataBase(this);
+       // helper = new DataBase(this);
 
 
 
@@ -174,9 +178,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         recordButton.setOnClickListener(v -> {
-            Intent intent = new Intent(this, list.class);
-            System.out.println("ok");
-            startActivity(intent);
+//            Intent intent = new Intent(this, list.class);
+//            System.out.println("ok");
+//            startActivity(intent);
 
         });
 
@@ -185,8 +189,8 @@ public class MainActivity extends AppCompatActivity {
 //    public void onSave(View view) {
 //
 //        // 入力欄に入力されたタイトルとコンテンツを取得
-//        String title    = editTitle.getText().toString();
-//        String contents = editContents.getText().toString();
+//        String DaiaryDate = c1;
+//        String Poromodemention = poro;
 //
 //        // 書き込みモードでデータベースをオープン
 //        try (SQLiteDatabase db = helper.getWritableDatabase()) {
@@ -194,15 +198,15 @@ public class MainActivity extends AppCompatActivity {
 //            // 入力されたタイトルとコンテンツをContentValuesに設定
 //            // ContentValuesは、項目名と値をセットで保存できるオブジェクト
 //            ContentValues cv = new ContentValues();
-//            cv.put(DBContract.DBEntry.COLUMN_NAME_TITLE, title);
-//            cv.put(DBContract.DBEntry.COLUMN_NAME_CONTENTS, contents);
+//            cv.put(DBContract.DBEntry.COLUMN_NAME_DaiaryDate, DaiaryDate);
+//            cv.put(DBContract.DBEntry.COLUMN_NAME_Poromodemention, Poromodemention);
 //
 //            // 現在テーブルに登録されているデータの_IDを取得
-//            Cursor cursor = db.query(DBContract.DBEntry.TABLE_NAME,  new String[] {DBContract.DBEntry._ID}, null, null,
+//            Cursor cursor = db.query(DBContract.DBEntry.TABLE_NAME, new String[]{DBContract.DBEntry._ID}, null, null,
 //                    null, null, null, null);
 //
 //            // テーブルにデータが登録されていれば更新処理
-//            if (cursor.moveToFirst()){
+//            if (cursor.moveToFirst()) {
 //
 //                // 取得した_IDをparamsに設定
 //                String[] params = {cursor.getString(0)};
@@ -216,10 +220,7 @@ public class MainActivity extends AppCompatActivity {
 //                ((SQLiteDatabase) db).insert(DBContract.DBEntry.TABLE_NAME, null, cv);
 //            }
 //        }
-
-
-
-
-
-
-    }
+//
+//
+//    }
+}

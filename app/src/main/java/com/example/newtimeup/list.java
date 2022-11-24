@@ -1,18 +1,12 @@
 package com.example.newtimeup;
 
-import android.widget.EditText;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-
-public class list extends AppCompatActivity {
-    private DataBase helper = null;
-
-    private TextView viewTitle    = null;
-    private TextView viewContents = null;
-    private EditText editTitle    = null;
-    private EditText editContents = null;
+//public class list extends AppCompatActivity {
+//    private DataBase helper = null;
+//
+//    private TextView viewTitle    = null;
+//    private TextView viewContents = null;
+//    private EditText editTitle    = null;
+//    private EditText editContents = null;
 
 
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +49,6 @@ public class list extends AppCompatActivity {
 //
 //    }
 
-}
-
+//}
+//
 
