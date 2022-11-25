@@ -119,7 +119,7 @@ public class MainActivity<string> extends AppCompatActivity {
                         porocount++;
                         timerText.setText(dataFormat.
                                 format(count*period));
-                        if(porocount == 600)//10ms*60*5 5分の時のcountの値
+                        if(porocount == 15000)//10ms*60*5 5分の時のcountの値
                         {
                           poromodetime();
                         }
@@ -147,7 +147,7 @@ public class MainActivity<string> extends AppCompatActivity {
             SimpleDateFormat d1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             String c1 = d1.format(d);
             System.out.println(c1);
-            if(porocount >= 600) {
+            if(porocount >= 15000) {
                 if (null != timer) {
                     // Cancel
                     timer.cancel();

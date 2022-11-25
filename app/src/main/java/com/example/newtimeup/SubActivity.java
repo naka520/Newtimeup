@@ -98,7 +98,7 @@ public class SubActivity extends AppCompatActivity {
                         porocount++;
                         timerText.setText(dataFormat.
                                 format(count * period));
-                        if (porocount == 300)//10ms*60*5 5分の時のcountの値
+                        if (porocount == 3000)//10ms*60*5 5分の時のcountの値
                         {
                             poromodetime();
                         }
@@ -117,7 +117,7 @@ public class SubActivity extends AppCompatActivity {
 
 
         finishButton.setOnClickListener(v -> {
-            if (porocount >= 300) {
+            if (porocount >= 3000) {
                 finish();
                 if (null != timer) {
                     // Cancel
